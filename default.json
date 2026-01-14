@@ -4,12 +4,36 @@
     "config:recommended",
     "docker:enableMajor",
     "helpers:pinGitHubActionDigests",
-    "github>christfriedbalizou/renovate-config:autoMerge.json5",
-    "github>christfriedbalizou/renovate-config:labels.json5",
-    "github>christfriedbalizou/renovate-config:semanticCommits.json5",
+    "github>christfriedbalizou/renovate:autoMerge.json5",
+    "github>christfriedbalizou/renovate:changelogs.json5",
+    "github>christfriedbalizou/renovate:customManagers.json5",
+    "github>christfriedbalizou/renovate:grafanaDashboards.json5",
+    "github>christfriedbalizou/renovate:groups.json5",
+    "github>christfriedbalizou/renovate:labels.json5",
+    "github>christfriedbalizou/renovate:overrides.json5",
+    "github>christfriedbalizou/renovate:semanticCommits.json5",
     ":automergeBranch",
+    ":disableRateLimiting",
     ":dependencyDashboard",
-    ":disableRateLimiting"
+    ":semanticCommits",
+    ":timezone(Europe/London)"
   ],
-  "dependencyDashboardTitle": "Renovate Dashboard 🤖"
+  "dependencyDashboardTitle": "Renovate Dashboard 🤖",
+  "suppressNotifications": [
+    "prEditedNotification",
+    "prIgnoreNotification"
+  ],
+  "ignorePaths": [
+    "**/*.sops.*",
+    "**/resources/**"
+  ],
+  "flux": {
+    "managerFilePatterns": ["/\\.yaml(?:\\.j2)?$/"]
+  },
+  "helm-values": {
+    "managerFilePatterns": ["/\\.yaml(?:\\.j2)?$/"]
+  },
+  "kubernetes": {
+    "managerFilePatterns": ["/\\.yaml(?:\\.j2)?$/"]
+  }
 }
