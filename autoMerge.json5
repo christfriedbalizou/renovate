@@ -12,7 +12,7 @@
     },
     {
       description: "Auto-merge all container minor, and patch updates",
-      matchDatasources: ["docker", "helm", "aqua"],
+      matchDatasources: ["docker", "helm"],
       automerge: true,
       automergeType: "pr",
       matchUpdateTypes: ["minor", "patch"],
@@ -20,7 +20,7 @@
     },
     {
       description: "Auto-merge GitHub Actions",
-      matchManagers: ["github-actions"],
+      matchManagers: ["github-actions", "aqua"],
       automerge: true,
       automergeType: "branch",
       matchUpdateTypes: ["minor", "patch", "digest"],
