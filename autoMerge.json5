@@ -11,11 +11,11 @@
       ignoreTests: false,
     },
     {
-      description: "Auto-merge all container minor, and patch updates",
+      description: "Auto-merge all container and Helm minor, patch, and digest updates",
       matchDatasources: ["docker", "helm"],
       automerge: true,
       automergeType: "pr",
-      matchUpdateTypes: ["minor", "patch"],
+      matchUpdateTypes: ["minor", "patch", "digest"],
       ignoreTests: false,
     },
     {
